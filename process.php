@@ -16,7 +16,7 @@ if(isset($_POST['submit']))
     $m=$_POST['mail'];
     $g=$_POST['gender'];
     $h=$_POST['hobbie'];
-    $s="";
+    $s=" " ;
     foreach($h as $s1)
     {
         $s.=$s1.",";
@@ -24,11 +24,12 @@ if(isset($_POST['submit']))
     $sql="insert into details values('$n','$p','$r','$m','$g','$s')";
     if(mysqli_query($con,$sql))
     {
-        echo "<script>alert('inserted')</script>";
+        echo "<script>alert('inserted')
+        window.open('we.php','_self')</script>";
     }
     else{
         echo "error";
     }
-    mysqli_close($con);
-
 }
+mysqli_close($con);
+?>
